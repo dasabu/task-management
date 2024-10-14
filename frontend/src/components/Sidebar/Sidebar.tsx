@@ -1,4 +1,5 @@
 import Grid from '@mui/material/Grid2'
+import Profile from '../Profile'
 
 export const Sidebar = () => {
   return (
@@ -17,7 +18,7 @@ export const Sidebar = () => {
         alignItems: 'center'
       }}
     >
-      <h2>Sidebar Area</h2>
+      <Profile name='Anh' />
     </Grid>
   )
 }

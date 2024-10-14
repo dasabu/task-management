@@ -1,7 +1,7 @@
 import { FC, ReactElement } from 'react'
 import { ThemeProvider, CssBaseline } from '@mui/material'
 import { customTheme } from './theme/customTheme'
-import DashboardPage from './pages/dashboard'
+import DashboardPage from './pages/DashboardPage'
 
 // App is a functional component and it returns a React element
 
