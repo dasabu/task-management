@@ -3,6 +3,10 @@
   "references": [{ "path": "./tsconfig.app.json" }, { "path": "./tsconfig.node.json" }],
   "compilerOptions": {
     "target": "ES2015",
-    "baseUrl": "."
+    "baseUrl": ".",
+    // Material UI
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "strictNullChecks": true
   }
 }
