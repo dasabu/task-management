@@ -12,7 +12,8 @@ export const Profile: FC<IProfile> = (props): ReactElement => {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        marginBottom: '16px'
       }}
     >
       <Avatar
@@ -28,10 +29,10 @@ export const Profile: FC<IProfile> = (props): ReactElement => {
         </Typography>
       </Avatar>
       <Typography variant='h6' color='text.primary'>
-        Welcome, {props.name}
+        Welcome{props.name ? `, ${props.name}` : ''}
       </Typography>
       <Typography variant='body1' color='text.primary'>
-        This is your personal task manager
+        This is your personal tasks manager
       </Typography>
     </Box>
   )

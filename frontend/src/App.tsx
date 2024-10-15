@@ -8,7 +8,8 @@ import DashboardPage from './pages/DashboardPage'
 const App: FC = (): ReactElement => {
   return (
     <ThemeProvider theme={customTheme}>
-      <CssBaseline /> {/* Reset the default CSS value base on the theme we passed into the ThemeProvider */}
+      <CssBaseline />{' '}
+      {/* Reset the default CSS value base on the theme we passed into the ThemeProvider */}
       <DashboardPage />
     </ThemeProvider>
   )
