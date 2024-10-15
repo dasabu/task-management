@@ -3,18 +3,21 @@
   "module": "index.ts",
   "type": "module",
   "scripts": {
-    "dev": "bun run index.ts",
-    "start:dev": "bun run --watch index.ts"
+    "dev": "bun run --watch index.ts",
+    "start:dev": "nodemon --exec bun run index.ts --watch",
+    "build": "bunx tsc"
   },
   "devDependencies": {
     "@types/bun": "latest",
     "@types/express": "^5.0.0",
-    "@types/node": "^22.7.5"
+    "@types/node": "^22.7.5",
+    "nodemon": "^3.1.7"
   },
   "peerDependencies": {
     "typescript": "^5.6.3"
   },
   "dependencies": {
+    "dotenv": "^16.4.5",
     "express": "^4.21.1"
   }
 }
