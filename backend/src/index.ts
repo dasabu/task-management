@@ -5,6 +5,7 @@ import cors from 'cors'
 import bodyParser from 'body-parser'
 
 import { Task } from './tasks/task.entity.ts'
+import { tasksRouter } from './tasks/tasks.route.ts'
 
 dotenv.config()
 
@@ -44,3 +45,5 @@ AppDataSource.initialize()
   .catch((err) => {
     console.error(`An error occurred during Data Source initialization:: ${err}`)
   })
+
+app.use(tasksRouter)
