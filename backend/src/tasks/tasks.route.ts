@@ -1,9 +1,9 @@
-import { Router, Request, Response } from 'express'
+import { Router } from 'express'
 import { tasksController } from './tasks.controller'
+import { createTaskValidator } from './tasks.validator'
 
 export const tasksRouter: Router = Router()
 
-tasksRouter.get('/tasks', async (req: Request, res: Response) => {
-  const tasks = await tasksController.getAll(req, res)
-  res.status(200).send(tasks)
-})
+tasksRouter.get('/tasks', tasksController.getAll)
+
+tasksRouter.post('/tasks', createTaskValidator, tasksController.create)
