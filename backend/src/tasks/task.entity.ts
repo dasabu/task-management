@@ -19,7 +19,7 @@ export class Task {
     type: 'varchar',
     length: 255
   })
-  date: string
+  date: string // ISO format
 
   @Column({
     type: 'longtext'
