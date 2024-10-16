@@ -13,3 +13,13 @@ Content-Type: application/json
   "priority": "High",
   "status": "Todo"
 }
+
+### Update status of an existed task
+PATCH http://localhost:5002/api/v1/tasks
+Content-Type: application/json
+
+{
+  "id": "115e9864-b527-43ce-adcf-47a7bd511949",
+  "status": "InProgress"
+}
+### 115e9864-b527-43ce-adcf-47a7bd511949
