@@ -63,7 +63,6 @@ Follow these instructions to set up the project on your local machine.
      ```
    - Start the frontend server:
      ```
-     bash
      bun dev
      ```
 
