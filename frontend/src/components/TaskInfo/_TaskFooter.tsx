@@ -7,11 +7,19 @@ import {
 } from '@mui/material'
 import { FC, ReactElement } from 'react'
 import { ITaskFooter } from './interfaces/ITaskFooter'
+import { Status } from '../CreateTaskForm/enums/Status'
 
 export const TaskFooter: FC<ITaskFooter> = (
   props
 ): ReactElement => {
-  const { onStatusChange, onClick } = props
+  const {
+    id,
+    status,
+    onStatusChange = (e) =>
+      console.log(`onStatusChange: id: ${id}\ne: ${e}`),
+    onClick = (e) =>
+      console.log(`onClick: id: ${id}\ne: ${e}`)
+  } = props
 
   return (
     <Box
@@ -34,12 +42,13 @@ export const TaskFooter: FC<ITaskFooter> = (
         control={
           <Switch
             color='warning'
-            onChange={(e) => onStatusChange(e)}
-            onClick={onClick}
+            onChange={(e) => onStatusChange(id, e)}
+            defaultChecked={status === Status.InProgress}
           />
         }
       />
       <Button
+        onClick={(e) => onClick(id, e)}
         variant='contained'
         color='success'
         size='small'

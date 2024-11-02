@@ -7,11 +7,11 @@ POST http://localhost:5002/api/v1/tasks
 Content-Type: application/json
 
 {
-  "title": "Super Important Task 2",
-  "date": "2022-01-01T12:00:00Z",
-  "description": "The project manager is angry, @dev_team please fix as soon as possible",
-  "priority": "High",
-  "status": "Todo"
+    "title": "Super Important Task 10",
+    "date": "2022-01-28T01:55:25Z",
+    "description": "Fix the bugs reported in the last sprint. It's vital to tackle these issues to ensure the stability of our application and maintain trust with our users.",
+    "priority": "High",
+    "status": "Completed"
 }
 
 ### Update status of an existed task

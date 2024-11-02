@@ -6,7 +6,5 @@ export interface ITaskInfo
   extends ITaskHeader,
     ITaskDescription,
     ITaskFooter {
-  id?: string
   priority?: string
-  status?: string
 }

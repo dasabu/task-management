@@ -1,5 +1,5 @@
-import { Status } from '../../CreateTaskForm/enums/Status'
-import { TaskCounterStatusType } from '../interfaces/ITaskCounter'
+import { Status } from '../components/CreateTaskForm/enums/Status'
+import { TaskCounterStatusType } from '../components/TaskCounter/interfaces/ITaskCounter'
 
 export const getStatusColor = (
   status: TaskCounterStatusType

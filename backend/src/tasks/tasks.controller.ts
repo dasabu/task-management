@@ -18,7 +18,7 @@ class TasksController {
       return res.status(200).json({ data: allTasks })
     } catch (error) {
       console.error(`An error occurred in TaskController.getAll:: ${error}`)
-      return res.status(500).json({ error })
+      return res.status(500).json({ error: error })
     }
   }
 
@@ -44,7 +44,7 @@ class TasksController {
       return res.status(201).json({ data: createdTask })
     } catch (error) {
       console.error(`An error occurred in TaskController.create:: ${error}`)
-      return res.status(500).json({ error })
+      return res.status(500).json({ error: error })
     }
   }
 
@@ -64,7 +64,7 @@ class TasksController {
       })
     } catch (error) {
       console.error(`An error occurred in TaskController.updateStatus:: ${error}`)
-      return res.status(500).json({ error })
+      return res.status(500).json({ error: error })
     }
 
     if (!task) {
@@ -85,7 +85,7 @@ class TasksController {
       return res.status(200).json({ data: updatedTask })
     } catch (error) {
       console.error(`An error occurred in TaskController.updateStatus:: ${error}`)
-      return res.status(500).json({ error })
+      return res.status(500).json({ error: error })
     }
   }
 }

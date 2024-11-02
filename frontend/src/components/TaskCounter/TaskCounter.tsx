@@ -3,7 +3,7 @@ import { FC, ReactElement } from 'react'
 
 import { ITaskCounter } from './interfaces/ITaskCounter'
 import { Status } from '../CreateTaskForm/enums/Status'
-import { getStatusColor } from './helpers/getStatusColor'
+import { getStatusColor } from '../../helpers/getStatusColor'
 
 export const TaskCounter: FC<ITaskCounter> = (
   props
