@@ -1,4 +1,6 @@
-# Task Management App
+<h1 align="center">Task Management App</h1>
+
+<img width="1455" alt="Screenshot 2024-11-03 at 01 53 36" src="https://github.com/user-attachments/assets/2e99026d-8bb4-4473-8605-3e311f55b065">
 
 A simple single-page application for managing tasks. This project is intended as a learning exercise for working with TypeScript, Bun, ReactJS, and NodeJS.
 
