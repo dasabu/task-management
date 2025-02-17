@@ -8,10 +8,6 @@ import {
   AlertTitle
 } from '@mui/material'
 
-import { TaskTitleField } from './_TaskTitleField'
-import { TaskDescriptionField } from './_TaskDescriptionField'
-import { TaskDateField } from './_TaskDateField'
-import { TaskSelectField } from './_TaskSelectField'
 import { Status } from './enums/Status'
 import { Priority } from './enums/Priority'
 import { useContext, useEffect, useState } from 'react'
@@ -19,6 +15,12 @@ import { useMutation } from '@tanstack/react-query'
 import { sendApiRequest } from '../../helpers/sendApiRequest'
 import { ICreateTask } from '../TaskArea/interfaces/ICreateTask'
 import { TaskStatusChangeContext } from '../../context/TaskStatusChange.context'
+import {
+  TaskDateField,
+  TaskDescriptionField,
+  TaskSelectField,
+  TaskTitleField
+} from './components'
 
 export const CreateTaskForm = () => {
   const [title, setTitle] = useState<string | undefined>(

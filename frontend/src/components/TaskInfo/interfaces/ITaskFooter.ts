@@ -1,7 +1,7 @@
 import React from 'react'
 
 export interface ITaskFooter {
-  id: string
+  id?: string
   status?: string
   onStatusChange?: (
     id: string,

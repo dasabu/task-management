@@ -1,9 +1,9 @@
 import { Box, Chip, Typography } from '@mui/material'
 import { FC, ReactElement } from 'react'
-import { ITaskHeader } from './interfaces/ITaskHeader'
 import { format } from 'date-fns'
+import { ITaskHeader } from '../interfaces/ITaskHeader'
 
-export const TaskHeader: FC<ITaskHeader> = (
+const TaskHeader: FC<ITaskHeader> = (
   props
 ): ReactElement => {
   const { title = 'Default Title', date = new Date() } =
@@ -30,3 +30,5 @@ export const TaskHeader: FC<ITaskHeader> = (
     </Box>
   )
 }
+
+export default TaskHeader

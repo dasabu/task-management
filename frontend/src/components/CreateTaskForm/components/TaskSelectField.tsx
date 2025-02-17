@@ -5,10 +5,9 @@ import {
   Select
 } from '@mui/material'
 import { FC, ReactElement } from 'react'
+import { ISelectField } from '../interfaces/ISelectField'
 
-import { ISelectField } from './interfaces/ISelectField'
-
-export const TaskSelectField: FC<ISelectField> = (
+const TaskSelectField: FC<ISelectField> = (
   props
 ): ReactElement => {
   const { disabled, name, label, value, onChange, items } =
@@ -39,3 +38,5 @@ export const TaskSelectField: FC<ISelectField> = (
     </>
   )
 }
+
+export default TaskSelectField

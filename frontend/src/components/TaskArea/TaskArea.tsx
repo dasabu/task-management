@@ -74,12 +74,7 @@ export const TaskArea: FC<ITaskInfo> = (): ReactElement => {
     })
   }
 
-  const markCompletedHandler = (
-    id: string,
-    e:
-      | React.MouseEvent<HTMLButtonElement>
-      | React.MouseEvent<HTMLAnchorElement>
-  ) => {
+  const markCompletedHandler = (id: string) => {
     updateTaskMutation.mutate({
       id,
       status: Status.Completed

@@ -4,7 +4,7 @@ import Grid from '@mui/material/Grid2'
 import Sidebar from '../../components/Sidebar'
 import TaskArea from '../../components/TaskArea'
 
-export const DashboardPage: FC = (): ReactElement => {
+const Dashboard: FC = (): ReactElement => {
   return (
     <Grid
       container
@@ -18,3 +18,5 @@ export const DashboardPage: FC = (): ReactElement => {
     </Grid>
   )
 }
+
+export default Dashboard

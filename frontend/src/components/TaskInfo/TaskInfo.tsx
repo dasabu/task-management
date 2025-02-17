@@ -1,12 +1,14 @@
 import { Box } from '@mui/material'
 import { FC, ReactElement } from 'react'
 
-import { TaskHeader } from './_TaskHeader'
-import { TaskDescription } from './_TaskDescription'
-import { TaskFooter } from './_TaskFooter'
 import { ITaskInfo } from './interfaces/ITaskInfo'
 import { getStatusColor } from '../../helpers/getStatusColor'
 import { Status } from '../CreateTaskForm/enums/Status'
+import {
+  TaskDescription,
+  TaskFooter,
+  TaskHeader
+} from './components'
 
 export const TaskInfo: FC<ITaskInfo> = (
   props
@@ -17,7 +19,6 @@ export const TaskInfo: FC<ITaskInfo> = (
     date,
     description,
     status,
-    priority,
     onStatusChange,
     onClick
   } = props

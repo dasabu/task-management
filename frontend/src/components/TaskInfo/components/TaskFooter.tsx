@@ -6,10 +6,10 @@ import {
   Typography
 } from '@mui/material'
 import { FC, ReactElement } from 'react'
-import { ITaskFooter } from './interfaces/ITaskFooter'
-import { Status } from '../CreateTaskForm/enums/Status'
+import { ITaskFooter } from '../interfaces/ITaskFooter'
+import { Status } from '../../CreateTaskForm/enums/Status'
 
-export const TaskFooter: FC<ITaskFooter> = (
+const TaskFooter: FC<ITaskFooter> = (
   props
 ): ReactElement => {
   const {
@@ -42,13 +42,13 @@ export const TaskFooter: FC<ITaskFooter> = (
         control={
           <Switch
             color='warning'
-            onChange={(e) => onStatusChange(id, e)}
+            onChange={(e) => onStatusChange(id!, e)}
             defaultChecked={status === Status.InProgress}
           />
         }
       />
       <Button
-        onClick={(e) => onClick(id, e)}
+        onClick={(e) => onClick(id!, e)}
         variant='contained'
         color='success'
         size='small'
@@ -63,3 +63,5 @@ export const TaskFooter: FC<ITaskFooter> = (
     </Box>
   )
 }
+
+export default TaskFooter
