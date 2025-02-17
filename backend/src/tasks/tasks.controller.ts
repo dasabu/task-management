@@ -5,8 +5,11 @@ import { Task } from './task.entity'
 import { validationResult } from 'express-validator'
 import { UpdateResult } from 'typeorm'
 
+// Before:      async func(): Promise<Response> { return res.status(200).json() }
+// After:       async func(): Promise<void> { res.status(200).json() }
+// Better fix:  extend Request interface (https://www.reddit.com/r/node/comments/nin8fs/help_node_express_typescript_how_should_i_type_a/)
 class TasksController {
-  async getAll(req: Request, res: Response): Promise<Response> {
+  async getAll(req: Request, res: Response): Promise<void> {
     let allTasks: Task[]
     try {
       allTasks = await dataSource.getRepository(Task).find({
@@ -15,18 +18,18 @@ class TasksController {
         }
       })
       allTasks = instanceToPlain(allTasks) as Task[]
-      return res.status(200).json({ data: allTasks })
+      res.status(200).json({ data: allTasks })
     } catch (error) {
       console.error(`An error occurred in TaskController.getAll:: ${error}`)
-      return res.status(500).json({ error: error })
+      res.status(500).json({ error: error })
     }
   }
 
-  async create(req: Request, res: Response): Promise<Response> {
+  async create(req: Request, res: Response): Promise<void> {
     const errors = validationResult(req)
 
     if (!errors.isEmpty()) {
-      return res.status(400).json({ error: errors.array() })
+      res.status(400).json({ error: errors.array() })
     }
 
     const newTask = new Task()
@@ -41,18 +44,18 @@ class TasksController {
     try {
       createdTask = await dataSource.getRepository(Task).save(newTask)
       createdTask = instanceToPlain(createdTask) as Task
-      return res.status(201).json({ data: createdTask })
+      res.status(201).json({ data: createdTask })
     } catch (error) {
       console.error(`An error occurred in TaskController.create:: ${error}`)
-      return res.status(500).json({ error: error })
+      res.status(500).json({ error: error })
     }
   }
 
-  async updateStatus(req: Request, res: Response): Promise<Response> {
+  async updateStatus(req: Request, res: Response): Promise<void> {
     const errors = validationResult(req)
 
     if (!errors.isEmpty()) {
-      return res.status(400).json({ error: errors.array() })
+      res.status(400).json({ error: errors.array() })
     }
 
     let task
@@ -64,11 +67,11 @@ class TasksController {
       })
     } catch (error) {
       console.error(`An error occurred in TaskController.updateStatus:: ${error}`)
-      return res.status(500).json({ error: error })
+      res.status(500).json({ error: error })
     }
 
     if (!task) {
-      return res.status(404).json({ error: 'Task does not exist' })
+      res.status(404).json({ error: 'Task does not exist' })
     }
 
     let updatedTask: UpdateResult
@@ -82,10 +85,10 @@ class TasksController {
       )
 
       updatedTask = instanceToPlain(updatedTask) as UpdateResult
-      return res.status(200).json({ data: updatedTask })
+      res.status(200).json({ data: updatedTask })
     } catch (error) {
       console.error(`An error occurred in TaskController.updateStatus:: ${error}`)
-      return res.status(500).json({ error: error })
+      res.status(500).json({ error: error })
     }
   }
 }
